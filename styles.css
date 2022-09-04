@@ -43,9 +43,10 @@ main {
 
 #display {
   margin: 4px;
-  padding: 1px;
+  padding-right: 2px;
   background-color: rgb(255, 255, 255);
   color: #000000;
+  font-size: larger;
   display: flex;
   align-items: flex-end;
   justify-content: end;
@@ -54,7 +55,7 @@ main {
   border: 2px rgb(0, 0, 0);
   border-radius: 3%;
   border-color: #d627a4;
-  box-shadow: 1px 2px 4px blue;
+  box-shadow: 1px 2px 3px rgb(70, 70, 196);
 }
 
 #inner {
@@ -68,13 +69,12 @@ main {
 button {
   font-family: "Fredoka One", cursive;
   font-size: larger;
-
-  border-radius: 50%;
+  border-radius: 40%;
   width: 70px;
   height: 40px;
   margin: 5px;
   border-color: #d627a4;
-  box-shadow: 1px 2px 4px blue;
+  box-shadow: 1px 2px 3px rgb(70, 70, 196);
 }
 
 footer {
