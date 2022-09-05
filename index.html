@@ -7,7 +7,7 @@
     <meta autor="Martyna 'the other mk' Kowalczyk" />
     <title>Kawaii Calculator</title>
     <link rel="stylesheet" href="styles.css" />
-    <source src="script.js" defer ></source>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header id="header"><h1>Kawaii Calculator</h1></header>
@@ -15,32 +15,31 @@
     <main id="main">
       <div id="calculatorBody">
   
-        <div id="display"> 12345566</div>
+        <div id="display"></div>
          <div id="inner">
        
-          <button id="1">1</button>
-          <button id="2">2</button>
-          <button id="3">3</button>
-          <button id="4">4</button>
-          <button id="5">5</button>
-          <button id="6">6</button>
-          <button id="7">7</button>
-          <button id="8">8</button>
-          <button id="9">9</button>
-          <button id="0">0</button>
+          <button id="1" class="numberButton" onclick="getValue('1'); sayHello();"  value="1">1</button>
+          <button id="2" class="numberButton" onclick="getValue('2'); sayHello();" value="2">2</button>
+          <button id="3" class="numberButton" onclick="getValue('3'); sayHello();"value="3">3</button>
+          <button id="4" class="numberButton" onclick="getValue('4'); sayHello();"value="4">4</button>
+          <button id="5" class="numberButton" onclick="getValue('5'); sayHello();"value="5">5</button>
+          <button id="6" class="numberButton" onclick="getValue('6'); sayHello();"value="6">6</button>
+          <button id="7" class="numberButton" onclick="getValue('7'); sayHello();"value="7">7</button>
+          <button id="8" class="numberButton" onclick="getValue('8'); sayHello();"value="8">8</button>
+          <button id="9" class="numberButton" onclick="getValue('9'); sayHello();"value="9">9</button>
+          <button id="0" class="numberButton" onclick="getValue('0'); sayHello();"value="0">0</button>
         
 
-          <button id="plus" onclick="operate('add');">+</button>
-          <button id="minus" onclick="operate('subtract');">-</button>
-          <button id="multiply" onclick="operate('multiply');">x</button>
-          <button id="divide" onclick="operate('divide');">/</button>
-          <button id="enter">=</button>
+          <button id="plus" onclick="getValue('+'); operate('add');">+</button>
+          <button id="minus" onclick="getValue('-'); operate('subtract');">-</button>
+          <button id="multiply" onclick="getValue('*'); operate('multiply');">x</button>
+          <button id="divide" onclick="getValue('/'); operate('divide');">÷</button>
+          <button id="enter" onclick="getValue('='); getResults();">=</button>
 
           <!-- <button id="dot">.</button> -->
-          <button id="clear">clear</button>
+          <button id="clear" onclick="clear();">clear</button>
           </div>
-    
-
+  
         </div>
     </div>
 
