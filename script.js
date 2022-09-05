@@ -1,4 +1,5 @@
 let previous;
+let current;
 let nextNum;
 
 let result;
@@ -15,41 +16,42 @@ function getValue(choice){
 
 }
 
-function sayHello() {
+function sayHello() { // function called this way as originally tests were displaying hello, decided to keep it this way
 
     previous = dis; /// add the number
-    document.getElementById('display').innerHTML = dis;
-    console.log(previous);
-    // next = previous;
-    // console.log(previous, next)
-   
+    current = document.getElementById('display').innerHTML += previous;
+    console.log(current);
+
 }
 
 function operate() {
     
-    if (dis === 'add'){
+    switch(dis){
+        case 'add':
 
-        result = previous;um2;
-     
+            result = previous + nextNum;
+            break;
+        
+        case 'subtract':
 
+        result = previous - nextNum;
+        break;
+            
+        case 'multiply':
 
-       
+        result = previous * nextNum;
+        break;
+
+        case 'divide':
+
+        result = previous / nextNum;
+        break;
+        
+    
+        default:
+        result = 'error';
+        
     }
-    else if (dis === 'subtract'){
-        result = previous;um2;
-     
-
-    }
-    else if (dis === 'multiply'){
-        result = previous;um2;
-     
-
-    }
-    else if (dis === 'divide'){
-        result = previous;um2;
- }
-
-    return result;
     }
 
 
