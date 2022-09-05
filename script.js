@@ -12,13 +12,16 @@ function clearThis(){
 
 function getValue(choice){
     dis = choice;
-    console.log(dis);
+
 }
 
 function sayHello() {
 
+    previous = dis; /// add the number
     document.getElementById('display').innerHTML = dis;
-    console.log(dis);
+    console.log(previous);
+    // next = previous;
+    // console.log(previous, next)
    
 }
 
