@@ -1,11 +1,18 @@
-let num1;
-let num2;
+let previous;
+let nextNum;
+
 let result;
 let dis;
 
+function clearThis(){
+  
+    document.getElementById('display').innerHTML = 'cleared';
+    console.log('cleared');
+}
+
 function getValue(choice){
     dis = choice;
-console.log(dis);
+    console.log(dis);
 }
 
 function sayHello() {
@@ -15,34 +22,38 @@ function sayHello() {
    
 }
 
-function operate(action) {
+function operate() {
+    
+    if (dis === 'add'){
 
-    if (action === 'add'){
+        result = previous;um2;
+     
 
-        result = num1 + num2;
+
        
     }
-    else if (action === 'subtract'){
-        result = num1 - num2;
-        
+    else if (dis === 'subtract'){
+        result = previous;um2;
+     
+
     }
-    else if (action === 'multiply'){
-        result = num1 * num2;
-        
+    else if (dis === 'multiply'){
+        result = previous;um2;
+     
+
     }
-    else if (action === 'divide'){
-        result = num1 / num2;
-        
-    }
+    else if (dis === 'divide'){
+        result = previous;um2;
+ }
+
     return result;
+    }
 
-}
 
-function storeNumber(num) {
-    let num1 = num.value;
-    console.log(num1);
-}
 
 function getResults(){
+
+    operate();
+    document.getElementById('display').innerHTML = 'result';
     //something something get results from operate() and display them in a display window
 }
