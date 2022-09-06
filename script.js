@@ -4,9 +4,7 @@ let current;
 let result;
 let value;
 
-let num1 = 0;
-let num2 = 0;
-
+let num1 = null;
 let theOperator;
 
 function getResults() {
@@ -20,7 +18,7 @@ function getResults() {
 
 function clearThis() {
 
-    buttonsBackOnline();
+buttonsBackOnline();
   // clear secondary and primary displays
   document.getElementById("secondaryDisplay").innerHTML = "";
   document.getElementById("primaryDisplay").innerHTML = "";
@@ -42,13 +40,30 @@ function operator(choice) {
 
   theOperator = choice; // identify what the operator is (add, subtract, multiply or divide)
 
+  if(num1 != null){
+
+    console.log('num1 is not null');
+    operate();
+
+    num1 = result;
+    console.log('this is new num1 ' + num1);
+    document.getElementById("secondaryDisplay").innerHTML = num1 + " " + value;
+    document.getElementById("primaryDisplay").innerHTML = ""; 
+    buttonsBackOnline();
+
+
+  }
+  else {
+  console.log('current num ' + num1);
+
   num1 = current; //save the first number
 
   document.getElementById("secondaryDisplay").innerHTML = num1 + " " + value; // send the first number to secondary display along with the value
   document.getElementById("primaryDisplay").innerHTML = ""; //clear the primary display ready for next number
   previous = 0;
-
+  }
   // need to add a button to stop from pressing ' . ' button more than once to prevent errors
+
 }
 
 function operate() {
