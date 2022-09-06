@@ -1,80 +1,80 @@
 let previous;
 let current;
-let nextNum;
 
 let result;
 let value;
 
+let num1 = 0;
+let num2 = 0;
 
-function clearThis(){
+let theOperator;
+
+function clearThis() { // clear secondary and primary displays
+  document.getElementById("secondaryDisplay").innerHTML = ""; 
+  document.getElementById("primaryDisplay").innerHTML = "";
+  console.log("cleared");
+}
+
+function getValue(choice) { // give value content
+  value = choice;
+}
+
+function sayHello() {
+  // function called this way as originally tests were displaying hello, decided to keep it this way
+
+  previous = value; /// add the number
+  current = document.getElementById("primaryDisplay").innerHTML += previous;
+  console.log(current);
+}
+
+function operator(choice) {
+
+    theOperator = choice; // identify what the operator is (add, subtract, multiply or divide)
   
-    document.getElementById('secondaryDisplay').innerHTML = '';
-    document.getElementById('primaryDisplay').innerHTML = 'cleared';
-    console.log('cleared');
-}
+    console.log('this is the operator ' + theOperator); // console.log check
 
-function getValue(choice){
-    value = choice;
+  num1 = current; //save the first number
+  document.getElementById("secondaryDisplay").innerHTML = num1 + ' ' + value; // send the first number to secondary display along with the value
+  document.getElementById("primaryDisplay").innerHTML = ""; //clear the primary display ready for next number
+  previous = 0;
 
-}
-
-function sayHello() { // function called this way as originally tests were displaying hello, decided to keep it this way
-
-
-    previous = value; /// add the number
-    current = document.getElementById('primaryDisplay').innerHTML += previous;
-    console.log(current);
-
-}
-
-function operator(){
-
-    console.log(current);
-
-    num1 = current;
-
-
-
+  console.log('current ' + current); //console logs checks
+  console.log('previous ' + previous);
+  console.log('value ' + value);
 }
 
 function operate() {
-    
-    let num1 = previous;
- 
-    switch(value){
-        case 'add':
 
-            result = previous + nextNum;
-            break;
-            console.log(result);
-        
-        case 'subtract':
+console.log('this value is then what? ' + value); //console log check
 
-        result = previous - nextNum;
-        break;
-            
-        case 'multiply':
+  switch (theOperator) {
+    case "add":
+      result = num1 + current;
+      break;
+      console.log(result);
 
-        result = previous * nextNum;
-        break;
+    case "subtract":
+      result = num1 - current;
+      break;
 
-        case 'divide':
+    case "multiply":
+      result = num1 * current;
+      break;
 
-        result = previous / nextNum;
-        break;
-        
-    
-        default:
-        result = 'error';
-        
-    }
-    }
+    case "divide":
+      result = num1 / current;
+      break;
 
+    default:
+      result = "error";
+  }
 
+  console.log("this is the result " + result);
+}
 
-function getResults(){
-
-    // operate();
-    document.getElementById('display').innerHTML = 'result';
-    //something something get results from operate() and display them in a display window
+function getResults() {
+  operate();
+  document.getElementById('secondaryDisplay').innerHTML = ' ';
+  document.getElementById("primaryDisplay").innerHTML = result;
+  //something something get results from operate() and display them in a display window
 }
