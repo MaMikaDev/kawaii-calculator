@@ -11,14 +11,10 @@ function getResults() {
   operate();
   document.getElementById("secondaryDisplay").innerHTML = " ";
   document.getElementById("primaryDisplay").innerHTML = result;
-  //something something get results from operate() and display them in a display window
-
-  // I need to add the function to disable buttons or one that clears the result before adding more
 }
 
 function clearThis() {
-
-buttonsBackOnline();
+  buttonsBackOnline();
   // clear secondary and primary displays
   document.getElementById("secondaryDisplay").innerHTML = "";
   document.getElementById("primaryDisplay").innerHTML = "";
@@ -30,8 +26,11 @@ function getValue(choice) {
 }
 
 function sayHello() {
-  previous = value; /// adds the number depending on the button pressed
 
+
+  
+
+  previous = value; /// adds the number upon pressing the button    
   current = document.getElementById("primaryDisplay").innerHTML += previous; //creates the first number for calculation
 }
 
@@ -40,30 +39,30 @@ function operator(choice) {
 
   theOperator = choice; // identify what the operator is (add, subtract, multiply or divide)
 
-  if(num1 != null){ //checks if num1 is already 'filled'
+  if (num1 != null) {
+    //checks if num1 is already 'filled'
 
-    console.log('num1 is not null');
+    console.log("num1 is not null");
     operate(); //perfoms a basic calculation and returns the result
 
     num1 = result; //result becomes a new num1, ready for another calculation involving it
-    console.log('this is new num1 ' + num1);
+    console.log("this is new num1 " + num1);
     document.getElementById("secondaryDisplay").innerHTML = num1 + " " + value;
-    document.getElementById("primaryDisplay").innerHTML = ""; 
-    buttonsBackOnline();
+    document.getElementById("primaryDisplay").innerHTML = "";
+    buttonsBackOnline(); //makes sure the number buttons are unblocked
 
+  } else {
 
-  }
-  else {
-  console.log('current num ' + num1);
+    console.log("current num " + num1);
 
-  num1 = current; //save the first number
+    num1 = current; //save the first number
 
-  document.getElementById("secondaryDisplay").innerHTML = num1 + " " + value; // send the first number to secondary display along with the value
-  document.getElementById("primaryDisplay").innerHTML = ""; //clear the primary display ready for next number
-  previous = 0;
-  }
+    document.getElementById("secondaryDisplay").innerHTML = num1 + " " + value; // send the first number to secondary display along with the value
+    document.getElementById("primaryDisplay").innerHTML = ""; //clear the primary display ready for next number
+    previous = 0;
+  
+}
   // need to add a button to stop from pressing ' . ' button more than once to prevent errors
-
 }
 
 function operate() {
