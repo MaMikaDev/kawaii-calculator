@@ -23,6 +23,7 @@ function clearThis() {
   document.getElementById("secondaryDisplay").innerHTML = "";
   document.getElementById("primaryDisplay").innerHTML = "";
   console.log("cleared");
+  buttonsBackOnline();
 }
 
 function getValue(choice) {
