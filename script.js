@@ -40,12 +40,12 @@ function operator(choice) {
 
   theOperator = choice; // identify what the operator is (add, subtract, multiply or divide)
 
-  if(num1 != null){
+  if(num1 != null){ //checks if num1 is already 'filled'
 
     console.log('num1 is not null');
-    operate();
+    operate(); //perfoms a basic calculation and returns the result
 
-    num1 = result;
+    num1 = result; //result becomes a new num1, ready for another calculation involving it
     console.log('this is new num1 ' + num1);
     document.getElementById("secondaryDisplay").innerHTML = num1 + " " + value;
     document.getElementById("primaryDisplay").innerHTML = ""; 
