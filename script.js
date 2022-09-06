@@ -10,6 +10,7 @@ let num2 = 0;
 let theOperator;
 
 function getResults() {
+
   operate();
   document.getElementById("secondaryDisplay").innerHTML = " ";
   document.getElementById("primaryDisplay").innerHTML = result;
@@ -42,8 +43,8 @@ function sayHello() {
 
 function operator(choice) {
 
-    
- 
+ buttonsBackOnline();
+
   theOperator = choice; // identify what the operator is (add, subtract, multiply or divide)
 
 
@@ -56,6 +57,8 @@ function operator(choice) {
   console.log("current after adding the operator" + current); //console logs checks
   console.log("previous after deletion " + previous);
   console.log("value of the button " + value);
+
+ // need to add a button to stop from pressing ' . ' button more than once to prevent errors
 
   }
 
@@ -87,10 +90,28 @@ function operate() {
       result = "error";
   }
 
-  console.log("this is the result " + result);
-    
-  current = result;
+  current = result; // result gets moved to a current number.
 
-  console.log('new num1 = ' + current);
+  tempDisableButtons();
+
+}
+
+function tempDisableButtons (){
+
+    for (let i = 0; i < 10; i++){
+
+    document.getElementById(i).disabled = true;
+
+    }
+
+}
+
+function buttonsBackOnline(){
+
+    for (let i = 0; i < 10; i++){
+
+        document.getElementById(i).disabled = false;
+    
+        }
 
 }

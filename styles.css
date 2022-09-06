@@ -93,6 +93,10 @@ button {
   box-shadow: 1px 2px 3px rgb(216, 24, 24);
 }
 
+button:hover {
+  background-color: rgb(178, 255, 53);
+}
+
 footer {
   padding: 2.5em;
   display: flex;
