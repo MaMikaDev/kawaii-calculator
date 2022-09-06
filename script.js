@@ -3,34 +3,50 @@ let current;
 let nextNum;
 
 let result;
-let dis;
+let value;
+
 
 function clearThis(){
   
-    document.getElementById('display').innerHTML = 'cleared';
+    document.getElementById('secondaryDisplay').innerHTML = '';
+    document.getElementById('primaryDisplay').innerHTML = 'cleared';
     console.log('cleared');
 }
 
 function getValue(choice){
-    dis = choice;
+    value = choice;
 
 }
 
 function sayHello() { // function called this way as originally tests were displaying hello, decided to keep it this way
 
-    previous = dis; /// add the number
-    current = document.getElementById('display').innerHTML += previous;
+
+    previous = value; /// add the number
+    current = document.getElementById('primaryDisplay').innerHTML += previous;
     console.log(current);
+
+}
+
+function operator(){
+
+    console.log(current);
+
+    num1 = current;
+
+
 
 }
 
 function operate() {
     
-    switch(dis){
+    let num1 = previous;
+ 
+    switch(value){
         case 'add':
 
             result = previous + nextNum;
             break;
+            console.log(result);
         
         case 'subtract':
 
@@ -58,7 +74,7 @@ function operate() {
 
 function getResults(){
 
-    operate();
+    // operate();
     document.getElementById('display').innerHTML = 'result';
     //something something get results from operate() and display them in a display window
 }
