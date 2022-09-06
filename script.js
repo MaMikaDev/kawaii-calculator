@@ -49,7 +49,7 @@ console.log('this value is then what? ' + value); //console log check
 
   switch (theOperator) {
     case "add":
-      result = num1 + current;
+      result = (+num1) + (+current); // ensures the values get added not concatenated 
       break;
       console.log(result);
 
@@ -77,4 +77,7 @@ function getResults() {
   document.getElementById('secondaryDisplay').innerHTML = ' ';
   document.getElementById("primaryDisplay").innerHTML = result;
   //something something get results from operate() and display them in a display window
+
+
+  // I need to add the function to disable buttons or one that clears the result before adding more
 }
