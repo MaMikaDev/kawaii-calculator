@@ -9,47 +9,65 @@ let num2 = 0;
 
 let theOperator;
 
-function clearThis() { // clear secondary and primary displays
-  document.getElementById("secondaryDisplay").innerHTML = ""; 
+function getResults() {
+  operate();
+  document.getElementById("secondaryDisplay").innerHTML = " ";
+  document.getElementById("primaryDisplay").innerHTML = result;
+  //something something get results from operate() and display them in a display window
+
+  // I need to add the function to disable buttons or one that clears the result before adding more
+}
+
+function clearThis() {
+  // clear secondary and primary displays
+  document.getElementById("secondaryDisplay").innerHTML = "";
   document.getElementById("primaryDisplay").innerHTML = "";
   console.log("cleared");
 }
 
-function getValue(choice) { // give value content
+function getValue(choice) {
+  // give value content
   value = choice;
 }
 
 function sayHello() {
-  // function called this way as originally tests were displaying hello, decided to keep it this way
 
-  previous = value; /// add the number
-  current = document.getElementById("primaryDisplay").innerHTML += previous;
-  console.log(current);
+  previous = value; /// adds the number depending on the button pressed
+
+  current = document.getElementById("primaryDisplay").innerHTML += previous; //creates the first number for calculation
+
+  console.log("current in say hello function " + current); 
+
 }
 
 function operator(choice) {
 
-    theOperator = choice; // identify what the operator is (add, subtract, multiply or divide)
-  
-    console.log('this is the operator ' + theOperator); // console.log check
+    
+ 
+  theOperator = choice; // identify what the operator is (add, subtract, multiply or divide)
+
 
   num1 = current; //save the first number
-  document.getElementById("secondaryDisplay").innerHTML = num1 + ' ' + value; // send the first number to secondary display along with the value
+  
+  document.getElementById("secondaryDisplay").innerHTML = num1 + " " + value; // send the first number to secondary display along with the value
   document.getElementById("primaryDisplay").innerHTML = ""; //clear the primary display ready for next number
   previous = 0;
 
-  console.log('current ' + current); //console logs checks
-  console.log('previous ' + previous);
-  console.log('value ' + value);
-}
+  console.log("current after adding the operator" + current); //console logs checks
+  console.log("previous after deletion " + previous);
+  console.log("value of the button " + value);
+
+  }
+
+  
+
 
 function operate() {
 
-console.log('this value is then what? ' + value); //console log check
 
   switch (theOperator) {
     case "add":
-      result = (+num1) + (+current); // ensures the values get added not concatenated 
+      result = +num1 + +current; // ensures the values get added not concatenated
       break;
       console.log(result);
 
@@ -70,14 +88,9 @@ console.log('this value is then what? ' + value); //console log check
   }
 
   console.log("this is the result " + result);
-}
+    
+  current = result;
 
-function getResults() {
-  operate();
-  document.getElementById('secondaryDisplay').innerHTML = ' ';
-  document.getElementById("primaryDisplay").innerHTML = result;
-  //something something get results from operate() and display them in a display window
+  console.log('new num1 = ' + current);
 
-
-  // I need to add the function to disable buttons or one that clears the result before adding more
 }
